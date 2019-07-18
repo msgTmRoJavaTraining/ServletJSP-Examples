@@ -20,8 +20,10 @@ public class SessionServlet extends HttpServlet {
             nrVisited = 0;
         }
         nrVisited++;
+
         httpSession.setAttribute("nrVisited", nrVisited);
         response.setContentType("text/plain");
+
         try (PrintWriter outWriter = response.getWriter()) {
             outWriter.println(nrVisited);
         }
