@@ -1,0 +1,10 @@
+#nameCNP {
+    width: 210px;
+    height: 60px;
+    background-color: aquamarine;
+    position: relative;
+    float: left;
+}
+#nameCNP input{
+    /*float: right;*/
+}
