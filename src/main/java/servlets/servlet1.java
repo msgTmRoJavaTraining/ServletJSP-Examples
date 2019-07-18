@@ -12,7 +12,7 @@ import java.io.IOException;
 @WebServlet(name = "servlet1", urlPatterns = "/servlet1")
 public class servlet1 extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 
     }
 
@@ -21,14 +21,14 @@ public class servlet1 extends HttpServlet {
         String nume = req.getParameter("name");
         String cnp = req.getParameter("cnp");
         HttpSession httpSession = req.getSession();
-        if (!nume.contains(" ") && cnp.length() != 13) {
-            resp.sendRedirect("index.html");
-        } else {
+        if (nume.contains(" ") && cnp.length() == 13) {
             httpSession.setAttribute("name", nume);
             httpSession.setAttribute("cnp", cnp);
 
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("servlet2");
             requestDispatcher.forward(req,resp);
+        } else {
+            resp.sendRedirect("index.html");
         }
     }
 }
