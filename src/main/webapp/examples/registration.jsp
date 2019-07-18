@@ -6,12 +6,16 @@
 </head>
 <body>
 
-<form method="post" action="registered.jsp">
-    <input type="text" name="nume"/>
+<form method="post" action="RegisteredForm.jsp">
+
+    Name: &nbsp;&nbsp;
+    <input type="text" name="name"/>
     </br>
-    <input type="text" name="varsta"/>
-    </br>
-    <input type="submit" value="Register!"/>
+    <br><br>
+    CNP:  &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="cnp"/>
+    </br><br>
+    <input type="submit" value="Login"/>
 </form>
 </body>
 </html>

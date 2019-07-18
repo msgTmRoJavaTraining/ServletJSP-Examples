@@ -13,7 +13,6 @@ import java.io.PrintWriter;
 @WebServlet(name = "SecondServlet", urlPatterns = "/SecondServlet")
 public class SecondServlet extends HttpServlet
 {
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

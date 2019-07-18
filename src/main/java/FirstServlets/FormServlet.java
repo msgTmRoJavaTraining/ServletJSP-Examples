@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "FormServlet", urlPatterns = "/FormServlet")
 public class FormServlet extends HttpServlet
@@ -22,11 +21,11 @@ public class FormServlet extends HttpServlet
         String recieved1 = req.getParameter("Name");
         String recieved2 = req.getParameter("CNP");
 
-        if(recieved2.length()==13 && recieved1.contains(" ")) {
+        if(recieved2.length()==13 && recieved1.contains(" "))
+        {
             RequestDispatcher requestDispatcher =req.getRequestDispatcher("SecondServlet");
 
             HttpSession s=req.getSession();
-
             s.setAttribute("Name",recieved1);
             s.setAttribute("CNP",recieved2);
             requestDispatcher.forward(req,resp);
@@ -36,7 +35,4 @@ public class FormServlet extends HttpServlet
             resp.sendRedirect("form.html");
         }
     }
-
-
-
 }

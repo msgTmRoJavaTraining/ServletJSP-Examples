@@ -1,4 +1,4 @@
-<%--
+<%@ page import="beans.example.Person" %><%--
   Created by IntelliJ IDEA.
   User: kissa
   Date: 7/13/2018
@@ -12,9 +12,12 @@
 </head>
 <body>
     <%
-        String name = request.getParameter("nume");
-        String varsta = request.getParameter("varsta");
-        out.print("Hello "+name + " aged "+varsta);
+        HttpSession httpSession = request.getSession();
+
+        Person p1= (Person) httpSession.getAttribute("p1");
+
+        out.println(p1.getName()+"   "+p1.getCNP());
+
     %>
 </body>
 </html>
